@@ -33,6 +33,14 @@
   .core { background: #fff; color: var(--bg); }
   .trip { border: 2px solid #fff; color: #fff; }
   footer { text-align: center; font-size: .78rem; opacity: .65; margin-top: 26px; }
+  .tips { border: 1px dashed rgba(255,255,255,.35); border-radius: 14px; padding: 16px; margin: 0 0 22px; }
+  .tips p { margin: 0 0 10px; }
+  .tips form { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tips input { flex: 1 1 200px; min-width: 0; padding: 12px; border-radius: 10px; border: 0; font-size: 1rem; }
+  .tips button { flex: 0 0 auto; padding: 12px 16px; border-radius: 10px; border: 0; font-weight: 700;
+                  font-size: 1rem; background: var(--btn); color: var(--btn-text); cursor: pointer; }
+  .tips small { display: block; opacity: .75; margin-top: 8px; }
+  .tips .done { font-weight: 700; }
 </style>
 </head>
 <body>
@@ -43,6 +51,25 @@
   <p class="note">Free. No sign-up. Printable PDF.</p>
   <img class="preview" src="../assets/new-year-preview.png" alt="Preview of the Free New Year Reset Worksheet">
   <ul><li>What worked, what to leave behind</li><li>3 intentions for the year ahead</li><li>One small commitment for this month</li></ul>
+  <section class="tips" id="tips">
+    <p><b>Want 3 quick tips for using it, plus 20% off the full version?</b></p>
+    <form action="https://assets.mailerlite.com/jsonp/2668530/forms/199913974668461979/subscribe" method="post" target="ml-sink">
+      <input type="email" name="fields[email]" placeholder="Your email" aria-label="Your email" required autocomplete="email">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Send me the tips</button>
+    </form>
+    <small>3 short emails. Unsubscribe anytime.</small>
+  </section>
+  <iframe name="ml-sink" title="signup" hidden></iframe>
+  <script>
+    document.querySelector('#tips form').addEventListener('submit', function () {
+      var box = document.getElementById('tips');
+      setTimeout(function () {
+        box.innerHTML = '<p class="done">You\u2019re in. Check your inbox for tip #1.</p>';
+      }, 400);
+    });
+  </script>
   <section class="up">
     <h2>Want the full system?</h2>
     <p>The New Year Reset Journal: Year-in-review reflection, values and intentions, 90-day goal breakdown, 12-week check-in grid, and a 30-day habit tracker.</p>
