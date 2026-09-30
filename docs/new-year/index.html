@@ -25,13 +25,15 @@
   ul { padding-left: 20px; margin: 18px 0 26px; }
   li { margin: 4px 0; }
   .up { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
-         border-radius: 14px; padding: 18px; }
+         border-radius: 14px; padding: 18px; transition: box-shadow .3s, border-color .3s; }
   .up h2 { font-size: 1.2rem; margin: 0 0 6px; }
   .up p { margin: 0 0 14px; opacity: .92; }
+  .code { text-align: center; font-size: .85rem; opacity: .85; margin: 2px 0 14px; }
   .buy { display: block; text-align: center; text-decoration: none; font-weight: 700;
           border-radius: 12px; padding: 14px; margin-top: 10px; }
   .core { background: #fff; color: var(--bg); }
   .trip { border: 2px solid #fff; color: #fff; }
+  .up.pulse { border-color: var(--btn); box-shadow: 0 0 0 3px rgba(255,255,255,.15), 0 8px 24px rgba(0,0,0,.35); }
   footer { text-align: center; font-size: .78rem; opacity: .65; margin-top: 26px; }
   .tips { border: 1px dashed rgba(255,255,255,.35); border-radius: 14px; padding: 16px; margin: 0 0 22px; }
   .tips p { margin: 0 0 10px; }
@@ -47,7 +49,7 @@
 <main>
   <h1>Your resolutions keep failing? Do the reset first.</h1>
   <p class="sub">One page to look back honestly, set three intentions, and pick one small commitment you&#x27;ll actually keep.</p>
-  <a class="dl" href="https://github.com/Elsmen/free/releases/download/v1/free-new-year-reset-worksheet.pdf" download>Download the free PDF</a>
+  <a class="dl" id="dl-btn" href="https://github.com/Elsmen/free/releases/download/v1/free-new-year-reset-worksheet.pdf" download>Download the free PDF</a>
   <p class="note">Free. No sign-up. Printable PDF.</p>
   <img class="preview" src="../assets/new-year-preview.png" alt="Preview of the Free New Year Reset Worksheet">
   <ul><li>What worked, what to leave behind</li><li>3 intentions for the year ahead</li><li>One small commitment for this month</li></ul>
@@ -70,13 +72,23 @@
       }, 400);
     });
   </script>
-  <section class="up">
+  <section class="up" id="up">
     <h2>Want the full system?</h2>
     <p>The New Year Reset Journal: Year-in-review reflection, values and intentions, 90-day goal breakdown, 12-week check-in grid, and a 30-day habit tracker.</p>
     <a class="buy core" href="https://gum.co/u/vlcwujlf">Get the full planner, $22</a>
+    <p class="code">Use code <strong>NEWYEAR20</strong> for 20% off through January 15.</p>
     <a class="buy trip" href="https://gum.co/u/64lec4e4">Or start with the 7-Day Reset Kickstart Bundle, $8</a>
   </section>
   <footer>digitalelecread &middot; Printable planners and trackers</footer>
+  <script>
+    document.getElementById('dl-btn').addEventListener('click', function () {
+      setTimeout(function () {
+        var up = document.getElementById('up');
+        up.classList.add('pulse');
+        up.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 500);
+    });
+  </script>
 </main>
 </body>
 </html>
