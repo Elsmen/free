@@ -44,6 +44,7 @@
   .tips small { display: block; opacity: .75; margin-top: 8px; }
   .tips .done { font-weight: 700; }
 </style>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "31c17e7028994312b90abb3300653b52"}'></script>
 </head>
 <body>
 <main>
@@ -82,11 +83,21 @@
   <footer>digitalelecread &middot; Printable planners and trackers</footer>
   <script>
     document.getElementById('dl-btn').addEventListener('click', function () {
+      history.pushState({}, '', location.pathname + 'click-download/');
       setTimeout(function () {
         var up = document.getElementById('up');
         up.classList.add('pulse');
         up.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 500);
+    });
+    document.querySelectorAll('.buy').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var dest = btn.getAttribute('href');
+        var kind = btn.classList.contains('core') ? 'core' : 'tripwire';
+        history.pushState({}, '', location.pathname + 'click-' + kind + '/');
+        setTimeout(function () { location.href = dest; }, 150);
+      });
     });
   </script>
 </main>
