@@ -54,7 +54,25 @@
   <p class="note">Free. No sign-up. Printable PDF.</p>
   <img class="preview" src="../assets/moving-preview.png" alt="Preview of the Free Moving Day Checklist">
   <ul><li>Morning-of checklist</li><li>Load-out order and essentials box</li><li>Final walk-through before you leave</li></ul>
-
+  <section class="tips" id="tips">
+    <p><b>Want 3 quick tips for using it, plus 20% off the full version?</b></p>
+    <form action="https://assets.mailerlite.com/jsonp/2668530/forms/201378090465625477/subscribe" method="post" target="ml-sink">
+      <input type="email" name="fields[email]" placeholder="Your email" aria-label="Your email" required autocomplete="email">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Send me the tips</button>
+    </form>
+    <small>3 short emails. Unsubscribe anytime.</small>
+  </section>
+  <iframe name="ml-sink" title="signup" hidden></iframe>
+  <script>
+    document.querySelector('#tips form').addEventListener('submit', function () {
+      var box = document.getElementById('tips');
+      setTimeout(function () {
+        box.innerHTML = '<p class="done">You\u2019re in. Check your inbox for tip #1.</p>';
+      }, 400);
+    });
+  </script>
   <section class="up" id="up">
     <h2>Want the full system?</h2>
     <p>Moving &amp; Relocation Checklist: Full 8-week moving timeline, room-by-room packing tracker, moving budget tracker, change-of-address checklist, and new home setup checklist.</p>

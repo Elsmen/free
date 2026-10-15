@@ -54,7 +54,25 @@
   <p class="note">Free. No sign-up. Printable PDF.</p>
   <img class="preview" src="../assets/postpartum-preview.png" alt="Preview of the Free Daily Postpartum Check-In">
   <ul><li>Daily mood and recovery check-in</li><li>Not diagnostic, just a real log</li><li>Crisis resources included</li></ul>
-
+  <section class="tips" id="tips">
+    <p><b>Want 3 quick tips for using it, plus 20% off the full version?</b></p>
+    <form action="https://assets.mailerlite.com/jsonp/2668530/forms/201379289313052304/subscribe" method="post" target="ml-sink">
+      <input type="email" name="fields[email]" placeholder="Your email" aria-label="Your email" required autocomplete="email">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Send me the tips</button>
+    </form>
+    <small>3 short emails. Unsubscribe anytime.</small>
+  </section>
+  <iframe name="ml-sink" title="signup" hidden></iframe>
+  <script>
+    document.querySelector('#tips form').addEventListener('submit', function () {
+      var box = document.getElementById('tips');
+      setTimeout(function () {
+        box.innerHTML = '<p class="done">You\u2019re in. Check your inbox for tip #1.</p>';
+      }, 400);
+    });
+  </script>
   <section class="up" id="up">
     <h2>Want the full system?</h2>
     <p>The Postpartum Recovery Planner: Full 6-week recovery timeline, a mental health check-in log, meal-prep and visitor-boundary planning, a pediatrician-visit tracker, and crisis resources.</p>

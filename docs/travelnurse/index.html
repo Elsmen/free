@@ -54,7 +54,25 @@
   <p class="note">Free. No sign-up. Excel spreadsheet.</p>
   <img class="preview" src="../assets/travelnurse-preview.png" alt="Preview of the Free Travel Nurse Pay Calculator">
   <ul><li>Taxable wage + tax-free stipend, done right</li><li>Real net, not a guess</li><li>Works in Excel or Google Sheets</li></ul>
-
+  <section class="tips" id="tips">
+    <p><b>Want 3 quick tips for using it, plus 20% off the full version?</b></p>
+    <form action="https://assets.mailerlite.com/jsonp/2668530/forms/201378055321552798/subscribe" method="post" target="ml-sink">
+      <input type="email" name="fields[email]" placeholder="Your email" aria-label="Your email" required autocomplete="email">
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Send me the tips</button>
+    </form>
+    <small>3 short emails. Unsubscribe anytime.</small>
+  </section>
+  <iframe name="ml-sink" title="signup" hidden></iframe>
+  <script>
+    document.querySelector('#tips form').addEventListener('submit', function () {
+      var box = document.getElementById('tips');
+      setTimeout(function () {
+        box.innerHTML = '<p class="done">You\u2019re in. Check your inbox for tip #1.</p>';
+      }, 400);
+    });
+  </script>
   <section class="up" id="up">
     <h2>Want the full system?</h2>
     <p>Travel Nurse Budget System: Full 6-tab system: contract setup, weekly pay breakdown, tax home tracker, contract-to-contract budgeting, and multi-assignment savings goals.</p>
